@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
     "titulo": "Aprende Node.js",
     "numVistas": 45642,
@@ -7,4 +8,15 @@
         "Node.js"
     ],
     "esPublico": true
+=======
+{
+    "titulo": "Aprende Node.js",
+    "numVistas": 45642,
+    "numLikes": 21123,
+    "temas": [
+        "JavaScript",
+        "Node.js"
+    ],
+    "esPublico": true
+>>>>>>> 2c85a2e (Inicializando el curso para subir a git)
 }
