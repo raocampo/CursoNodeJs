@@ -15,6 +15,7 @@ const miPedidoDePizza = new Promise((resolve, reject) => {
     }, 3000);
 });
 
+/* FORMA UNO DE PRESENTAR LA PROMESA */
 const manejaPedido = (mensajeConfirmacion) => {
     console.log(mensajeConfirmacion);
 };
@@ -24,8 +25,10 @@ const rechazaPedido = (mensajeError) => {
 };
 
 miPedidoDePizza.then(manejaPedido, rechazaPedido);
+/* FIN DE LA FORMA UNO */
 
-/* OTRA FORMA */
+/* OTRA FORMA DE REALIZAR LO ANTERIOR MAS CONOCIDO COMO method chaining */
+
 miPedidoDePizza
     .then((mensajeConfirmacion) => {
         console.log(mensajeConfirmacion);
@@ -33,3 +36,14 @@ miPedidoDePizza
     .catch((mensajeError) => {
         console.log(mensajeError);
     });
+
+/* OTRA ALTERNATIVA VÁLIDA*/
+const manejarPedido = (mensajeConfirmacion) => {
+        console.log(mensajeConfirmacion);
+};
+    
+const rechazarPedido = (mensajeError) => {
+        console.log(mensajeError);
+};
+
+miPedidoDePizza.then(manejarPedido).catch(rechazarPedido);

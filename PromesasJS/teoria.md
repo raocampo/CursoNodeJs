@@ -24,4 +24,7 @@ Las promesas tienen un método **_.then()_**, con el cual podemos decidir qué o
 
 ## Encadenar Promesas y Async Await
 
+Son palabras que se usan para trabajar con _promesas_ y nos ayudan a tener un código mas preciso(conciso).
+
+
 

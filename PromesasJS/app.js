@@ -22,4 +22,5 @@ const manejarPromesaRechazada = (razonRechazo) => {
     console.log(razonRechazo);
 };
 
+/*OTRA FGORMA DE REALIZAR LO ANTERIOR */
 miPromesa.then(manejarPromesaCumplida, manejarPromesaRechazada);
