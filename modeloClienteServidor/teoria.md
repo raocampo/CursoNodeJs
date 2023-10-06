@@ -80,11 +80,55 @@ El servidor luego de procesar el request(solicitud) realizada por el cliente rea
 
 **Códigos de estado**=> Son muy importantes en el response, ya que es donde nos indica que paso o sucede con la solicitud realizada por el cliente(navegador), **aprovada**, **rechazada**.
 
-Es un número que indica si se ha completado exitosamente o no la solicitud HTTP, esto son:
+Es un número que indica si se ha completado exitosamente o no la solicitud HTTP, estos son:
 
-* Respuestas informativas (100 - 199).
-* Respuestas satisfactorias (200 - 299).
-* Redirecciones (300 - 399).
-* Errores de los clientes (400 - 499).
-* Errores de los servidores (500 - 599).
+* Respuestas informativas **(100 - 199)**.
+* Respuestas satisfactorias **(200 - 299)**.
+* Redirecciones **(300 - 399)**.
+* Errores de los clientes **(400 - 499)**.
+* Errores de los servidores **(500 - 599)**.
 
+Con _Node.js y Express_ se puede especificar el código de estado de la respuesta HTTP en el servidor.
+
+Los códigos más comunes son:
+
+- 200 **OK** - La respuesta fue exitosa.
+- 400 **Bad Request** => El servidor no pudo interpretar la solicitud.
+- 404 **Not found** => El servidor no pudo encontrar el recurso solicitado.
+- 500 **Internal Server Error** => El servidor encontró una situación que no sabe como manejar.
+
+## Módulo HTTP en Node.js
+
+Este módulo le permite a Node.js transmitit información con el protcolo HTTP.
+
+El módulo http nos permite crear un servidor que escuche las solicitudes para luego enviarnos una respuesta.
+
+Para utilizar el módulo se utiliza el **require('http');** el mismo que se guarda en una variable **const** por ejemplo `const http = require('http');`, con esto se importa el módulo, el mismo se lo realiza al principio de las lineas de nuestro programa.
+
+**Código para crear el servidor en node.js**
+
+```js
+//Importamos el módulo http
+const http = require('http'); 
+
+/*Creamos el servidor
+1. Creamos una variable constante const = servidor. 
+2. Nos referimos a la variable que contiene el módulo http(http).
+3. Llamamos al método para crear un servidor createServer(.createServer).
+4. luego con una función flecha o arrow function (() =>) con el parámetro que contiene la solicitud = request(req) HTTP; y la respuesta = respuesta(res) HTTP; ((req, res) => {});.
+5. Y dentro de las llaves ({}); realizaremos los procesos en este caso con el método .end se envia la respuesta al cliente(navegador).*/
+
+const servidor = http.createServer((req, res) => {
+    res.end("Hola, mundo");
+});
+
+```
+Para que el servidor escuche esta petición se necesita de un puerto.
+
+## Puerto
+
+Es la ubicación virtual del sistema operativo en la cual se puede acceder a una aplicación o a un proceso específico que se esté ejecutando en ese puerto.
+
+
+Ejemplo: 
+[Creando un servidor](/modeloClienteServidor/app.js)
