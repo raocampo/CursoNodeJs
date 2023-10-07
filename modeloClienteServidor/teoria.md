@@ -129,6 +129,77 @@ Para que el servidor escuche esta petición se necesita de un puerto.
 
 Es la ubicación virtual del sistema operativo en la cual se puede acceder a una aplicación o a un proceso específico que se esté ejecutando en ese puerto.
 
-
 Ejemplo: 
 [Creando un servidor](/modeloClienteServidor/app.js)
+
+## Estructura de una URL
+
+Una _URL_ es una _**dirección**_ de un recurso en la web.
+
+**URL**=> **U**niform **R**esource **L**ocator  (Localizador Uniforme de Recursos).
+
+Básicamente la URL nos permite indicar la dirección de la página web a donde deseamos ingresar, la misma esta conformada de la siguiente forma:
+
+> **https://www.freecodecamp.org/espanol/**=> **URL**
+
+La URL es el inicio de las partes importantes para enviar la solicitud al servidor.
+
+## Partes de la URL
+
+_https_ => Protocolo (La s al final agrega una capa de seguridad).
+
+_www_ => Subdominio (Información adicional agregada al inicio del dominio de ua página web. Permite a los sitios web organizar y separar la información para distintos propósitos).
+
+freecodecamp => Dominio (Se conoce como el nombre de la página; Referencia única a un sitio web en internet).
+
+.org => Dominio de nivel superior mas conocido en IT como TLD(Top-Level Domain).
+Otros dominios de nivel superior:
+* .com
+* .net
+* .int
+* .edu
+* .gov
+
+/espanol => Camino (Path) => Archivo o directorio en el servidor web; Puede tener parámetros para personalizarlo, estos parámetros son parte de la URL.
+
+Todas las partes descritas anteriormente representan la raiz de nuestro sitio web.
+
+> _https://www.freecodecamp.org_ => Raíz
+
+Lo que viene luego de la barra **/** será el camino en donde van nuestros archivos, carpetas a las que apunta la URL, también se conoce como parámetro de ruta.
+Ejm:
+
+**Parámetros ruta**
+> _https://www.misitioejemplo.org_**/usuarios/10**
+
+**Parametros query(busqueda/consulta)**
+> _https://www.google.com/search_**?q=cursos+de+node**
+
+_Parámetros query(**query strings**) =>_ Son parametros usados para obtener _contenido dinámico_ y siempre están luego de el signo de interrogación de cierre, luego del signo se tiene la categoria y luego el valor. Por Ejm, filtrar una lista de recursos.
+
+Para utilizar varios parámetros query se utiliza el simbolo **&**(ambersand), luego de cada clave y valor .
+
+> _https://www.google.com/search_**?q=cursos+de+node**_&_**sourceid=chrome**_&_**ie=UTF-8**
+
+Usamos parámetrso query para _filtrar_ solicitudes GET (para obtener recursos específicos).
+
+## Módulo URL en node.js
+
+
+
+## Routing en Node.js
+
+Es manejar las solicitudes del cliente en base a ciertos criterios, hay dos criterios principales que son método y camino.
+
+_**Route**_ = Ruta
+
+### Criterios
+
+**Criterio 1** _**El método de la solicitud HTTP**_ => De esta forma el servidor sabe qué tipo de operación se realizará
+
+**Criterio 2** _**El path (camino) de la solicitud HTTP**_ => De esta forma el servidor sabe el recurso específico que se usará.
+
+En pocas palabras la ruta se trabaja de la siguiente forma: 
+> * Método + Path + Cómo manejarlo
+> * Qué + donde + como
+
