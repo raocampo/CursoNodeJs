@@ -28,7 +28,7 @@ let infoCursos = {
             titulo: "Aprende Calculo",
             tema: "cálculo",
             vistas: 3500,
-            nivel: "basico"
+            nivel: "inicial"
         },
         {
             id: 1,

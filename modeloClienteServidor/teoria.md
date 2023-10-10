@@ -203,3 +203,21 @@ En pocas palabras la ruta se trabaja de la siguiente forma:
 > * Método + Path + Cómo manejarlo
 > * Qué + donde + como
 
+### PD código por default
+
+El codigo 200 es el único que no se lo debe evaluar ya que el mismo por default ya se le asigna el OK => que esta bien y nos dara la respuesta de **true**(verdadero), los demás código si se los debe evaluar.
+
+Otra situación es que por convención se debe utilizar la palabra API para crear la carpeta donde estarian las respuestas del servidor
+
+# Nodemon para node.js
+
+Es una herramienta que reinicia la aplicación de Node.js cuando detecta algún cambio.
+
+Para instalar se utiliza el siguiente comando:
+> npm install -g nodemon
+
+para ejecutar se utiliza la siguiente sintaxis:
+> nodemon </nombre de la app> Ejm: **nodemon app.js **
+
+
+
