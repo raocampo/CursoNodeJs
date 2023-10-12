@@ -4,6 +4,14 @@ const {programacion} = require('../datos/cursos.js').infoCursos;
 
 const routerProgramacion = express.Router();
 
+/*Middleware => Estas funciones se ejecutan:
+  Después de recibir una solicitud.
+  Antes de enviar una respuesta.
+  Tienen acceso al objeto de la solicitud, al objeto de la respuesta y a next(), una función que se llama para ejecutar el próximo middleware*/
+
+routerProgramacion.use(express.json());
+
+
 //Routing para programacion
 
 routerProgramacion.get('/', (req, res) => {
@@ -40,6 +48,58 @@ routerProgramacion.get('/:lenguaje/:nivel', (req, res) => {
     }
 
     res.send(JSON.stringify(resultados));
+});
+
+// Método POST con express
+routerProgramacion.post('/', (req, res) => {
+    let cursoNuevo = req.body;
+    programacion.push(cursoNuevo);
+    res.send(JSON.stringify(programacion));
+});
+
+//Método PUT con express
+routerProgramacion.put('/:id', (req, res) => { 
+    const cursoActualizado = req.body;
+    const id = req.params.id;
+
+    const indice = programacion.findIndex(curso => curso.id == id);
+
+    if(indice >= 0){
+        programacion[indice] = cursoActualizado;
+    }
+
+    res.send(JSON.stringify(programacion));
+
+});
+
+//Método patch
+
+routerProgramacion.patch('/:id', (req, res) => {
+    const actualizar = req.body;
+    const id = req.params.id;
+
+    const indice = programacion.findIndex(curso => curso.id == id);
+
+    if(indice >= 0){
+        const cursoActualizar = programacion[indice];
+
+        Object.assign(cursoActualizar, actualizar);
+    }
+
+    res.send(JSON.stringify(programacion));
+});
+
+//Método delete
+
+routerProgramacion.delete('/:id', (req, res) => {
+    const id = req.params.id;
+
+    const indice = programacion.findIndex(curso => curso.id == id);
+
+    if(indice >= 0){
+        programacion.splice(indice, 1);
+    }
+    res.send(JSON.stringify(programacion));
 });
 
 module.exports = routerProgramacion;
